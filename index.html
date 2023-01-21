@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RSS Feed</title>	
+  <script src='./loadRegions.js' defer></script>
+  <script src='./scroll.js' defer></script>
+  <script src='./voiceOver.js' defer></script>
+	<link rel='stylesheet' href='./style.css'>
+</head>
+<body>
+    
+  <section>
+
+    <h1 style="font-size: 38px;">United Nations Regional News Reader</h1><hr>
+    
+    <div class="button-container"> 
+      <button id="africa-button">Africa</button>
+      <button id="americas-button">Americas</button>
+      <button id="asia-button">Asia Pacific</button>
+      <button id="europe-button">Europe</button>
+      <button id="middle-east-button">Middle East</button>
+    </div><hr>
+
+    <output></output>
+
+    <footer> 
+      <div class="button-container">
+        <button id="up" onclick="topFunction()" title="Go to top">⬆︎ Back to Top</button>
+        <button id="down" onclick="pageScroll()" title="Continue Scrolling">▼ Down +1</button>
+        <button id="stop" onclick="stopScroll()" title="Stop Scrolling"> Stop ▣ / Slow -1</button>
+        <button id="speak" onclick="speak()" title="Speak">🔊 Listen</button> 
+        <button id="cancel" onclick="cancelVoice()" title="Cancel Voice">🔉 Cancel Voice</button>
+      </div> 
+    </footer>
+
+  </section>       
+
+</body>
+</html>
