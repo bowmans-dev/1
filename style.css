@@ -85,11 +85,12 @@ img {
 }
 
 button {
+	touch-action: manipulation;
   line-height: 20px; 
   position: relative;
 	text-align: center;
-  font-size: 16px;
-  height: 40px;
+  font-size: 26px;
+  height: 70px;
   min-height: 20px;
   padding: 5px;
   border-radius: 25px;
