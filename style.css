@@ -125,10 +125,13 @@ button:disabled {
 	}
 }	
 
-@media screen and (max-width: 400px) {
-	button {
-		height: 70px;
-	}
+
+/* Styles for mobile devices in portrait mode */
+@media screen and (max-width: 400px) and (orientation: portrait) {
+  button {
+    font-size: 1.5ch; /* Increase font size */
+    height: 60px; /* Increase button height */
+  }
 }
 
 footer {
