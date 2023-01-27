@@ -26,7 +26,7 @@ The XML string is parsed into a DOM object using the DOMParser() object. The fun
 I recently consolidated all RSS logic into this particular loadRegion() function, resulting in smaller project size and a single script file to handle data from any region.
 
 
-My goal is to create something similar to a social media news feed with simple auto scrolling features enabled. 
+My goal is to create something similar to a social media news feed with simple auto scrolling features. 
 I made this so I can go through all of my news in the morning hands-free while drinking coffee and getting to plan my day out at the same time without interruption.
 
 Been enjoying quite a lot so far.
