@@ -6,12 +6,29 @@ const urls = {
   "middle-east-button" : "https://news.un.org/feed/subscribe/en/news/region/middle-east/feed/rss.xml"
 }
 
-document.querySelectorAll('button').forEach((button) => {
-  button.addEventListener('click', (event) => { 
-    document.querySelector('output').innerHTML = ""; // Clear output element
-    loadRegion(event.target.id);
-  });
+document.getElementById("africa-button").addEventListener("click", function (event) {
+  document.querySelector('output').innerHTML = ""; // Clear output element
+  loadRegion(event.target.id);
 });
+
+document.getElementById("americas-button").addEventListener("click", function (event) {
+  document.querySelector('output').innerHTML = ""; // Clear output element
+  loadRegion(event.target.id);
+});
+
+document.getElementById("asia-button").addEventListener("click", function (event) {
+  document.querySelector('output').innerHTML = ""; // Clear output element
+  loadRegion(event.target.id);
+});
+
+document.getElementById("europe-button").addEventListener("click", function (event) {
+  document.querySelector('output').innerHTML = ""; // Clear output element
+  loadRegion(event.target.id);
+});
+
+document.getElementById("middle-east-button").addEventListener("click", function (event) {
+  document.querySelector('output').innerHTML = ""; // Clear output element
+  loadRegion(event.target.id);
 
 const loadRegion = (key) => {
 
