@@ -29,6 +29,7 @@ document.getElementById("europe-button").addEventListener("click", function (eve
 document.getElementById("middle-east-button").addEventListener("click", function (event) {
   document.querySelector('output').innerHTML = ""; // Clear output element
   loadRegion(event.target.id);
+});
 
 const loadRegion = (key) => {
 
