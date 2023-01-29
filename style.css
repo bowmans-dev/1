@@ -9,8 +9,7 @@
 
 html {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  text-indent: 35px;
-  font-size: 18pt;
+  font-size: 15pt;
   overflow-x: hidden;
 }
 
@@ -23,27 +22,37 @@ section {
 	margin: auto;
 }
 
+.space {
+	display: none;
+}
+
 .date {
 	display: block;
 	text-align: left;
 	color: green;
-	font-size: 0.7rem;
+	font-size: 18pt;
 	margin-bottom: 0px;
 	margin-top: 0px;
 	padding: 0px;
 }
 
 output h1 {
+	
 	text-align: center;
-	background-color: var(--main-ui-btn-color);
 	border-radius: 250px;
-	color: var(--background-color);
 	padding: 30px;
-	text-shadow: black 3px 3px 7px;
+	text-shadow: black 1px 1px 2px;
 	text-emphasis-color: orangered;
 	margin-top: 16px;
   text-indent: 35px;
-  font-size: 18pt;
+	margin: 4%;
+}
+
+@media screen and (min-width: 576px) {
+	output h1 {
+		background-color: var(--main-ui-btn-color);
+		color: var(--background-color);
+	}
 }
 
 p {
@@ -64,68 +73,69 @@ img {
 	display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
+  width: 80%;
+	position: relative;
+	align-self: center;
   height: auto;
 }
 
-
 .link {
-	font-size: 0.4em;
+	font-size: 0.7rem;
   display: block;
   text-align: center;
   color: green;
 	padding-bottom: 250px;
+	border-style: dashed;
+	border-color: var(--main-ui-btn-color);
+	border-width: 2px;
+	border-radius: 25px;
 }
 
 .button-container {
 	display: flex;
-  justify-content: space-evenly;
-	gap: 2px;
+	justify-content: space-evenly;
+	gap: 6px;
 	padding-right: 2%;
 }
 
+.button-container-1 {
+	visibility: visible;	
+}
+
+.button-container-2 {
+	visibility: hidden;
+}
+
 button {
-	font-size: 1ch;
-	height: 45px;
+	font-size: 1.2rem;
+	height: 2.8rem;
 	touch-action: manipulation;
-  line-height: 20px; 
-  position: relative;
+	line-height: 2.6rem; 
+	position: relative;
 	text-align: center;
-  min-height: 20px;
-  padding: 5px;
-  border-radius: 25px;
-  width: 100%;
-  column-gap: 30px;
-	background-color: var(--main-ui-btn-color); /* Main Blue Color for the UI Buttons */
-  color: var(--ui-text-color); /* White Text Color for the Buttons */
-  border: none; /* No Border for the Buttons */
-  border-radius: 4px;
-  padding: 12px 24px; 
-  transition: background-color 0.3s ease; /* Transition for the Hover Effect */
+	min-height: 20px;
+	padding: 5px;
+	margin-top: 10px;
+	border-radius: 25px;
+	width: 100%;
+	column-gap: 30px;
+	border-radius: 4px;
+	transition: background-color 0.3s ease; /* Transition for the Hover Effect */
 }
 
 button:hover {
 	background-color: var(--hover-color); 
-  cursor: pointer;
+	color: var(--background-color);
+	cursor: pointer;
 }
 
 button:disabled {
 	background-color: var(--disabled-color); /* Disabled color for the Buttons */
-  cursor: not-allowed; /* Change Cursor to Not-Allowed When Button Is Disabled */
-}
-
-/* Styles for mobile devices in portrait mode */
-@media screen and (max-width: 4000px) and (orientation: portrait) {
-  button {
-    font-size: 1.4ch; /* Increase font size */
-    height: 60px; /* Increase button height */
-		overflow-x: hidden;
-		padding: 0;
-		margin: 0;
-  }
+	cursor: not-allowed; /* Change Cursor to Not-Allowed When Button Is Disabled */
 }
 
 footer {
+
 	width: 100%;
 	text-align: center;
 	align-items: center;
@@ -135,5 +145,72 @@ footer {
 	position: fixed; 
 	margin-bottom: 5px; 
 	border-radius: 25px; 
-	border: black 2px; 
+}
+
+@media screen and (min-width: 852px) {
+	.button-container-1 {
+		display: flex;
+		flex-direction: row;
+		visibility: visible;
+	}
+	.button-container-2 {
+		display: none;
+		visibility: hidden;
+	}
+}
+
+@media screen and (min-width: 779px) {
+	button {
+		font-size: 0.8rem;
+	}
+}
+
+@media screen and (min-width: 777px) {
+
+	button {
+		font-size: 1.5rem;
+		background-color: var(--main-ui-btn-color); /* Main Blue Color for the UI Buttons */
+		color: var(--background-color); /* White Text Color for the Buttons */
+	}
+	button#up, button#down, button#stop, button#speak, button#cancel {
+		font-size: 2rem;
+	}
+	button:hover {
+		background-color: var(--background-color); 
+		color: var(--hover-color);
+		cursor: pointer;
+	}
+}
+
+@media screen and (max-width: 576px) {
+
+	button#up, button#down, button#stop, button#speak, button#cancel {
+		font-size: 1.7rem;
+	}
+
+	output h1 {
+		text-align: center;
+		background-color: white;
+		border-radius: 250px;
+		color: darkslategrey;
+		padding: 30px;
+		text-shadow: grey 0px 0px 2px;
+		text-emphasis-color: orangered;
+		margin-top: 16px;
+		text-indent: 35px;
+	}
+}
+
+@media screen and (orientation: portrait) and (max-width: 400px) {
+
+  button {
+		padding: 0px;
+		font-size: 0.8rem;
+		height: 2.6rem;
+		touch-action: manipulation;
+  	line-height: 2.4rem;
+  }
+	div.button-container-2 > button#africa-button  {
+		display: block; margin-left: -0%; padding-left: 0%;
+	}
 }

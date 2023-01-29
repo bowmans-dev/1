@@ -33,6 +33,8 @@ document.getElementById("middle-east-button").addEventListener("click", function
 
 const loadRegion = (key) => {
 
+  const output = document.querySelector('output');
+
   let url = urls[key];
 
   fetch(url).then((res) => {
@@ -42,42 +44,47 @@ const loadRegion = (key) => {
       // Parse XML string into DOM object and loop through each item in the feed
       let doc = new DOMParser().parseFromString(xmlTxt, 'text/xml');
       doc.querySelectorAll('item').forEach((item) => {
-
-        // display date of article
-        let date = document.createElement('p');
-        date.textContent = item.querySelector('pubDate').textContent;
-        //remove the time from the date
-        date.textContent = date.textContent.slice(0, 16);
-        date.classList.add("date");
-        document.querySelector('output').appendChild(date);
-
+        
+        
+        // create a space for the voiceover to read out a long pause between articles 
+        let space = document.createElement('p');
+        space.textContent = `.,      ...`;
+        space.classList.add("space");
+        
+        
         // display title of article
         let h1 = document.createElement('h1');
         h1.textContent = item.querySelector('title').textContent;
-        document.querySelector('output').appendChild(h1);
+        output.appendChild(h1);
         
-        // display main paragraph main article
-        let p = document.createElement('p');
-        p.textContent = item.querySelector('description').textContent;
-        document.querySelector('output').appendChild(p);
-
+        output.appendChild(space);     
+        
         // get image from article
         let imageURL = document.createElement('img');
         imageURL.setAttribute('src', item.querySelector('enclosure').getAttribute('url'));
         imageURL.classList.add("image");
-        document.querySelector('output').appendChild(imageURL);
+        output.appendChild(imageURL);
+        
+        // display date of article
+        let date = document.createElement('p');
+        date.textContent = item.querySelector('pubDate').textContent;
+        date.textContent = date.textContent.slice(4, 12);
+        date.classList.add("date");
+        output.appendChild(date);
+        
+        // display main paragraph main article
+        let p = document.createElement('p');
+        p.textContent = item.querySelector('description').textContent;
+        output.appendChild(p);
+        
 
-        //display link to article and open in a new tab 
         let link = document.createElement('a');
         link.setAttribute('href', item.querySelector('link').textContent);
-        link.setAttribute('target', '_blank');
-        link.textContent = item.querySelector('link').textContent;
+        link.textContent = "";
         link.classList.add("link");
-        document.querySelector('output').appendChild(link);  
+        output.appendChild(link);
+        output.appendChild(space);
 
-        //display line break
-        let hr = document.createElement('hr');
-        document.querySelector('output').appendChild(hr);
       });
     });
   });
