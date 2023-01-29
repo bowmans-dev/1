@@ -152,6 +152,7 @@ footer {
 		display: flex;
 		flex-direction: row;
 		visibility: visible;
+		/* margin-top: 250px; */
 	}
 	.button-container-2 {
 		display: none;
@@ -171,9 +172,11 @@ footer {
 		font-size: 1.5rem;
 		background-color: var(--main-ui-btn-color); /* Main Blue Color for the UI Buttons */
 		color: var(--background-color); /* White Text Color for the Buttons */
+		height: 4rem;
 	}
 	button#up, button#down, button#stop, button#speak, button#cancel {
-		font-size: 2rem;
+		font-size: 3rem;
+		height: 3rem;
 	}
 	button:hover {
 		background-color: var(--background-color); 
