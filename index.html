@@ -3,13 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>RSS Feed</title>	
-  <!-- <script src='./loadFullArticle.js' defer></script> -->
   <script src='./loadRegions.js' defer></script>
   <script src='./scroll.js' defer></script>
   <script src='./voiceOver.js' defer></script>
 	<link rel='stylesheet' href='./style.css'>
 </head>
 <body>
+  
   <div class="button-container-1"> 
     <button id="africa-button">Africa</button>
     <button id="americas-button">Americas</button>
@@ -17,18 +17,14 @@
     <button id="europe-button">Europe</button>
     <button id="middle-east-button">Middle East</button>
   </div><hr>
-    
-  <section>
 
+  <section>
     <h1 style="font-size: 38px;">United Nations Regional News Reader</h1><hr>
-    
-    
     <output></output>
-    <div class="div2"></div>
     
     <footer> 
-      <hr>
       <div class="button-container">
+        <hr>
         <button id="up" onclick="topFunction()" title="Go to top">༆</button>
         <button id="stop" onclick="stopScroll()" title="Stop Scrolling">◼︎</button>
         <button id="down" onclick="pageScroll()" title="Continue Scrolling">▼</button>
@@ -36,7 +32,6 @@
         <button id="cancel" onclick="cancelVoice()" title="Cancel">🔉</button>
       </div> 
     </footer>
-
   </section>       
 
 </body>
