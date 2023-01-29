@@ -108,6 +108,7 @@ img {
 
 button {
 	font-size: 1.2rem;
+	height: 2.8rem;
 	touch-action: manipulation;
 	line-height: 2.6rem; 
 	position: relative;
@@ -151,11 +152,16 @@ footer {
 		display: flex;
 		flex-direction: row;
 		visibility: visible;
-		/* margin-top: 250px; */
 	}
 	.button-container-2 {
 		display: none;
 		visibility: hidden;
+	}
+}
+
+@media screen and (min-width: 779px) {
+	button {
+		font-size: 0.8rem;
 	}
 }
 
@@ -165,19 +171,9 @@ footer {
 		font-size: 1.5rem;
 		background-color: var(--main-ui-btn-color); /* Main Blue Color for the UI Buttons */
 		color: var(--background-color); /* White Text Color for the Buttons */
-		height: 4rem;
 	}
-	button#up {
-		font-size: 4rem;
-		height: 3rem;
-	}
-	button#down, button#stop {
-		font-size: 3rem;
-		height: 3rem;
-	}
-	button#speak, button#cancel {
-		font-size: 2.5rem;
-		height: 3rem;
+	button#up, button#down, button#stop, button#speak, button#cancel {
+		font-size: 2rem;
 	}
 	button:hover {
 		background-color: var(--background-color); 
@@ -187,6 +183,10 @@ footer {
 }
 
 @media screen and (max-width: 576px) {
+
+	button#up, button#down, button#stop, button#speak, button#cancel {
+		font-size: 1.7rem;
+	}
 
 	output h1 {
 		text-align: center;
@@ -206,11 +206,10 @@ footer {
   button {
 		padding: 0px;
 		font-size: 0.8rem;
-		height: 3rem;
+		height: 2.6rem;
 		touch-action: manipulation;
   	line-height: 2.4rem;
   }
-
 	div.button-container-2 > button#africa-button  {
 		display: block; margin-left: -0%; padding-left: 0%;
 	}
