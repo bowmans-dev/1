@@ -7,7 +7,7 @@ function topFunction() {
 
 function pageScroll() {
   window.scrollBy(0,1);
-  scrolldelay = setTimeout(pageScroll,42);
+  scrolldelay = setTimeout(pageScroll,30);
 }
 
 function stopScroll() {
