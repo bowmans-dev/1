@@ -1,7 +1,7 @@
 :root {
-	--background-color: #fff; /* Default Color for the Page Background */
+	--background-color: rgba(255, 255, 255, 0.887); /* Default Color for the Page Background */
 	--content-text-color: #000; /* Default Color for the Main Paragraph Text in Each Article */
-  --main-ui-btn-color: #1A73E8; /* (Buttons & Headlines) Main Background Color for the Buttons & Headlines */
+  --main-ui-btn-color: #1a73e8ec; /* (Buttons & Headlines) Main Background Color for the Buttons & Headlines */
   --ui-text-color: #fff; /* (Buttons & Headlines) Text Color for the Buttons & Headline Sections */
   --hover-color: #0059b3; /* Hover Color for the Buttons */
   --disabled-color: #ccc; /* Disabled Color for if Any of the Buttons Are Set to Disabled State */
@@ -11,6 +11,8 @@ html {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 15pt;
   overflow-x: hidden;
+	padding-left: 5%;
+	padding-right: 5%;
 }
 
 body {
@@ -41,7 +43,6 @@ output h1 {
 	text-align: center;
 	border-radius: 250px;
 	padding: 30px;
-	text-shadow: black 1px 1px 2px;
 	text-emphasis-color: orangered;
 	margin-top: 16px;
   text-indent: 35px;
@@ -96,21 +97,26 @@ img {
 	justify-content: space-evenly;
 	gap: 6px;
 	padding-right: 2%;
+	width: 88.6%;
+	text-align: center;
+	align-items: center;
+	align-content: center;
+	position: center;
+	bottom: 0; 
+	position: fixed; 
 }
 
 .button-container-1 {
-	visibility: visible;	
-}
-
-.button-container-2 {
-	visibility: hidden;
+	visibility: visible;
+	column-gap: 3px;	
 }
 
 button {
-	font-size: 1.2rem;
-	height: 2.8rem;
+	font-size: 1rem;
+	text-shadow: grey 0px 0px 2px;
+	height: 1.8rem;
 	touch-action: manipulation;
-	line-height: 2.6rem; 
+	line-height: 1.2rem; 
 	position: relative;
 	text-align: center;
 	min-height: 20px;
@@ -134,19 +140,6 @@ button:disabled {
 	cursor: not-allowed; /* Change Cursor to Not-Allowed When Button Is Disabled */
 }
 
-footer {
-
-	width: 100%;
-	text-align: center;
-	align-items: center;
-	align-content: center;
-	position: center;
-	bottom: 0; 
-	position: fixed; 
-	margin-bottom: 5px; 
-	border-radius: 25px; 
-}
-
 @media screen and (min-width: 852px) {
 	.button-container-1 {
 		display: flex;
@@ -168,12 +161,12 @@ footer {
 @media screen and (min-width: 777px) {
 
 	button {
-		font-size: 1.5rem;
+		font-size: 1rem;
 		background-color: var(--main-ui-btn-color); /* Main Blue Color for the UI Buttons */
 		color: var(--background-color); /* White Text Color for the Buttons */
 	}
-	button#up, button#down, button#stop, button#speak, button#cancel {
-		font-size: 2rem;
+	button#up, button#down, button#stop {
+		font-size: 1rem;
 	}
 	button:hover {
 		background-color: var(--background-color); 
@@ -185,7 +178,7 @@ footer {
 @media screen and (max-width: 576px) {
 
 	button#up, button#down, button#stop, button#speak, button#cancel {
-		font-size: 1.7rem;
+		font-size: 1rem;
 	}
 
 	output h1 {
@@ -210,7 +203,4 @@ footer {
 		touch-action: manipulation;
   	line-height: 2.4rem;
   }
-	div.button-container-2 > button#africa-button  {
-		display: block; margin-left: -0%; padding-left: 0%;
-	}
-}
+} 
