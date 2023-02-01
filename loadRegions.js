@@ -12,22 +12,22 @@ document.getElementById("africa-button").addEventListener("click", function (eve
 });
 
 document.getElementById("americas-button").addEventListener("click", function (event) {
-  document.querySelector('output').innerHTML = ""; // Clear output element
+  document.querySelector('output').innerHTML = "";
   loadRegion(event.target.id);
 });
 
 document.getElementById("asia-button").addEventListener("click", function (event) {
-  document.querySelector('output').innerHTML = ""; // Clear output element
+  document.querySelector('output').innerHTML = "";
   loadRegion(event.target.id);
 });
 
 document.getElementById("europe-button").addEventListener("click", function (event) {
-  document.querySelector('output').innerHTML = ""; // Clear output element
+  document.querySelector('output').innerHTML = "";
   loadRegion(event.target.id);
 });
 
 document.getElementById("middle-east-button").addEventListener("click", function (event) {
-  document.querySelector('output').innerHTML = ""; // Clear output element
+  document.querySelector('output').innerHTML = "";
   loadRegion(event.target.id);
 });
 
@@ -45,26 +45,6 @@ const loadRegion = (key) => {
       let doc = new DOMParser().parseFromString(xmlTxt, 'text/xml');
       doc.querySelectorAll('item').forEach((item) => {
         
-        
-        // create a space for the voiceover to read out a long pause between articles 
-        let space = document.createElement('p');
-        space.textContent = `.,      ...`;
-        space.classList.add("space");
-        
-        
-        // display title of article
-        let h1 = document.createElement('h1');
-        h1.textContent = item.querySelector('title').textContent;
-        output.appendChild(h1);
-        
-        output.appendChild(space);     
-        
-        // get image from article
-        let imageURL = document.createElement('img');
-        imageURL.setAttribute('src', item.querySelector('enclosure').getAttribute('url'));
-        imageURL.classList.add("image");
-        output.appendChild(imageURL);
-        
         // display date of article
         let date = document.createElement('p');
         date.textContent = item.querySelector('pubDate').textContent;
@@ -72,18 +52,41 @@ const loadRegion = (key) => {
         date.classList.add("date");
         output.appendChild(date);
         
-        // display main paragraph main article
-        let p = document.createElement('p');
-        p.textContent = item.querySelector('description').textContent;
-        output.appendChild(p);
-        
-
+        // display title of article
+        let h1 = document.createElement('h1');
+        h1.textContent = item.querySelector('title').textContent;
+        output.appendChild(h1);
+    
+        // create a link to the article
         let link = document.createElement('a');
         link.setAttribute('href', item.querySelector('link').textContent);
         link.textContent = "";
         link.classList.add("link");
         output.appendChild(link);
-        output.appendChild(space);
+        
+        // get image from article
+        let imageURL = document.createElement('img');
+        imageURL.setAttribute('src', item.querySelector('enclosure').getAttribute('url'));
+        imageURL.classList.add("image");
+        output.appendChild(imageURL);
+        
+        // display main paragraph main article
+        let p = document.createElement('p');
+        p.textContent = item.querySelector('description').textContent;
+        output.appendChild(p);
+        // make the link the same height as the paragraph
+        link.style.minHeight = p.clientHeight + "px";
+
+        // put the h1 inside of the link
+        // link.appendChild(h1);
+        //put the paragraph inside of the link
+        link.appendChild(p);
+        //put the date inside of the link
+        link.appendChild(date);
+
+        // create a line break separating each article
+        let hr = document.createElement('hr');
+        output.appendChild(hr);
 
       });
     });

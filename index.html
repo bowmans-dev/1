@@ -5,7 +5,7 @@
   <title>RSS Feed</title>	
   <script src='./loadRegions.js' defer></script>
   <script src='./scroll.js' defer></script>
-  <script src='./voiceOver.js' defer></script>
+  <!-- <script src='./voiceOver.js' defer></script> -->
   <link rel='stylesheet' href='./style.css'>
 </head>
 <body>
@@ -26,11 +26,36 @@
         <button id="up" onclick="topFunction()" title="Go to top">▲</button>
         <button id="down" onclick="pageScroll()" title="Continue Scrolling">▼</button>
         <button id="stop" onclick="stopScroll()" title="Stop Scrolling">▣</button>
-        <button id="speak" onclick="speak()" title="Speak">🔊</button> 
-        <button id="cancel" onclick="cancelVoice()" title="Cancel">🔉</button>
       </div> 
 
-  </section>       
+  </section>     
+  <script>
+    // on right key keypress, scroll down using pageScroll() function 
+    document.addEventListener('keydown', function(event) {
+      if (event.keyCode == 39) {
+        pageScroll();
+      }
+    });
+    // on left key keypress, scroll up using topFunction() function
+    document.addEventListener('keydown', function(event) {
+      if (event.keyCode == 37) {
+        topFunction();
+      }
+    });
+    // on up key keypress, scroll up using topFunction() function
+    document.addEventListener('keydown', function(event) {
+      if (event.keyCode == 38) {
+        topFunction();
+      }
+    });
+
+    // on down key keypress, scroll down using pageScroll() function
+    document.addEventListener('keydown', function(event) {
+      if (event.keyCode == 40) {
+        pageScroll();
+      }
+    });
+  </script>  
 
 </body>
 </html>
