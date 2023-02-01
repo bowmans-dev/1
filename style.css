@@ -5,14 +5,12 @@
   --ui-text-color: #fff; /* (Buttons & Headlines) Text Color for the Buttons & Headline Sections */
   --hover-color: #0059b3; /* Hover Color for the Buttons */
   --disabled-color: #ccc; /* Disabled Color for if Any of the Buttons Are Set to Disabled State */
-	--output-font-size: 1.5rem;
+	--output-font-size: 1.3rem;
 }
 
 html {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   overflow-x: hidden;
-	/* padding-left: 5%;
-	padding-right: 5%; */
 }
 :-webkit-any(article, aside, nav, section) h1 {
 	margin-block-start: 0.83em;
@@ -75,7 +73,6 @@ p {
 	text-align: center;
 	text-indent: 35px;
 	font-size: var(--output-font-size);
-	/* background-color: var(--background-color);; */
 	border-radius: 250px;
 	color: var(--content-text-color);
 	padding-left: 40px;
@@ -105,16 +102,14 @@ img {
 	border-color: var(--main-ui-btn-color);
 	border-width: 2px;
 	border-radius: 25px;
-	height: 40px;
-	margin-top: 400px;
+	height: 420px;
+	margin-top: 140px;
 }
 
 .button-container {
 	display: flex;
 	justify-content: space-evenly;
 	gap: 6px;
-	/* padding-right: 2%; */
-	/* width: 88.6%; */
 	width: 100%;
 	text-align: center;
 	align-items: center;
