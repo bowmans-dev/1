@@ -11,8 +11,8 @@
 html {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   overflow-x: hidden;
-	padding-left: 5%;
-	padding-right: 5%;
+	/* padding-left: 5%;
+	padding-right: 5%; */
 }
 :-webkit-any(article, aside, nav, section) h1 {
 	margin-block-start: 0.83em;
@@ -75,7 +75,7 @@ p {
 	text-align: center;
 	text-indent: 35px;
 	font-size: var(--output-font-size);
-	background-color: var(--background-color);;
+	/* background-color: var(--background-color);; */
 	border-radius: 250px;
 	color: var(--content-text-color);
 	padding-left: 40px;
@@ -106,14 +106,16 @@ img {
 	border-width: 2px;
 	border-radius: 25px;
 	height: 40px;
+	margin-top: 400px;
 }
 
 .button-container {
 	display: flex;
 	justify-content: space-evenly;
 	gap: 6px;
-	padding-right: 2%;
-	width: 88.6%;
+	/* padding-right: 2%; */
+	/* width: 88.6%; */
+	width: 100%;
 	text-align: center;
 	align-items: center;
 	align-content: center;
@@ -190,7 +192,7 @@ button:disabled {
 		cursor: pointer;
 	}
 	p {
-		font-size: 1.8rem;
+		font-size: 1.5rem;
 	}
 }
 

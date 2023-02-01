@@ -50,12 +50,12 @@ const loadRegion = (key) => {
         date.textContent = item.querySelector('pubDate').textContent;
         date.textContent = date.textContent.slice(4, 12);
         date.classList.add("date");
-        output.appendChild(date);
+        // output.appendChild(date);
         
         // display title of article
         let h1 = document.createElement('h1');
         h1.textContent = item.querySelector('title').textContent;
-        output.appendChild(h1);
+        // output.appendChild(h1);
     
         // create a link to the article
         let link = document.createElement('a');
@@ -68,7 +68,6 @@ const loadRegion = (key) => {
         let imageURL = document.createElement('img');
         imageURL.setAttribute('src', item.querySelector('enclosure').getAttribute('url'));
         imageURL.classList.add("image");
-        output.appendChild(imageURL);
         
         // display main paragraph main article
         let p = document.createElement('p');
@@ -76,13 +75,14 @@ const loadRegion = (key) => {
         output.appendChild(p);
         // make the link the same height as the paragraph
         link.style.minHeight = p.clientHeight + "px";
-
-        // put the h1 inside of the link
-        // link.appendChild(h1);
-        //put the paragraph inside of the link
-        link.appendChild(p);
+        
         //put the date inside of the link
         link.appendChild(date);
+        // put the h1 inside of the link
+        link.appendChild(h1);
+        //put the paragraph inside of the link
+        link.appendChild(p);
+        output.appendChild(imageURL);
 
         // create a line break separating each article
         let hr = document.createElement('hr');
