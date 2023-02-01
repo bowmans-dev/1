@@ -75,10 +75,10 @@ const loadRegion = (key) => {
         link.appendChild(h1);
         //put the date inside of the link
         link.appendChild(date);
+        // display the image outside of the link
+        link.appendChild(imageURL);
         //put the paragraph inside of the link
         link.appendChild(p);
-        // display the image outside of the link
-        output.appendChild(imageURL);
         
         // create a line break separating each article
         let hr = document.createElement('hr');
