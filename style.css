@@ -19,18 +19,8 @@ html {
 
 body {
 	text-align: center;
-	padding-left: 5%;
-	padding-right: 5%;
-}
-
-button#up, button#down, button#stop {
-	font-size: 2rem;
-	background-color: var(--main-ui-btn-color);
-	color: var(--ui-text-color);
-}
-button#up:hover, button#down:hover, button#stop:hover {
-	font-size: 1.8rem;
-	background-color: #104994ec;
+	padding-left: 1%;
+	padding-right: 1%;
 }
 
 section {
@@ -38,6 +28,18 @@ section {
 	margin: auto;
 }
 
+output h1 {
+	text-align: center;
+	border-radius: 250px;
+	text-emphasis-color: orangered;
+	margin-top: 16px;
+	text-indent: 35px;
+	font-size: var(--h1-web-font-size);
+	font-family: "Roboto Condensed","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 700;
+	line-height: 1.3;
+	padding: 3%;
+}
 .date {
 	text-align: left;
 	color: green;
@@ -47,17 +49,14 @@ section {
 	padding: 0px;
 }
 
-output h1 {
-	text-align: center;
-	border-radius: 250px;
-	text-emphasis-color: orangered;
-	margin-top: 16px;
-  text-indent: 35px;
-	font-size: var(--h1-web-font-size);
-	font-family: "Roboto Condensed","Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-weight: 700;
-  line-height: 1.3;
-	padding: 3%;
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	position: relative;
+	align-self: center;
+	height: auto;
 }
 
 a:link {
@@ -66,15 +65,10 @@ a:link {
 	height: fit-content;
 }
 
-div link:hover {
-	background-color: var(--hover-color);
-	color: var(--background-color);
-}
-
 p {
 	text-align: center;
 	text-indent: 35px;
-	font-size: var(--bs-body-font-size);
+	font-size: 1.5rem;
 	border-radius: 250px;
 	color: var(--content-text-color);
 	text-shadow: rgb(255, 255, 255) 3px 3px 7px;
@@ -83,15 +77,6 @@ p {
 	padding-bottom: 40px;
 }
 
-img {
-	display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-	position: relative;
-	align-self: center;
-  height: auto;
-}
 
 .link {
 	font-size: 0.7rem;
@@ -100,7 +85,7 @@ img {
   color: green;
 	border-style: dashed;
 	border-color: var(--main-ui-btn-color);
-	border-width: 2px;
+	border-width: 4px;
 	border-radius: 25px;
 	height: 420px;
 	padding-bottom: 40px;
@@ -110,16 +95,12 @@ img {
 
 .button-container {
 	display: flex;
+	flex-direction: row;
 	justify-content: space-evenly;
 	gap: 6px;
-	width: 88%;
+	width: 96%;
 	bottom: 0; 
 	position: fixed; 
-}
-
-.button-container-1 {
-	visibility: visible;
-	column-gap: 3px;	
 }
 
 button {
@@ -141,9 +122,16 @@ button {
 }
 
 button:hover {
+	font-size: 1.4rem;
+	/* background-color: #104994ec; */
 	background-color: var(--hover-color); 
 	color: var(--background-color);
 	cursor: pointer;
+}
+
+button:focus {
+	background-color: var(--background-color);
+	color: var(--main-ui-btn-color);
 }
 
 button:disabled {
@@ -152,42 +140,23 @@ button:disabled {
 }
 
 @media screen and (min-width: 950px) {
-	.button-container-1 {
+	.button-container {
 		display: flex;
 		flex-direction: row;
 		visibility: visible;
 	}
-	.button-container-2 {
-		display: none;
-		visibility: hidden;
-	}
 	h1 {
 		font-size: var(--h1-mobile-font-size);
-		font-size: 2rem;
-	}
-	p {
-		font-size: var(--h1-web-font-size);
+		font-size: 1.5rem;
 	}
 }
 
-@media screen and (min-width: 830px) {
-	button {
-		font-size: 0.8rem;
-	}
-	p {
-		font-size: var(--h1-mobile-font-size);
-	}
-}
-
-@media screen and (min-width: 800px) {
+@media screen and (max-width: 800px) {
 	
 	button {
-		font-size: 1.8rem;
+		font-size: 1.4rem;
 		background-color: var(--main-ui-btn-color);
 		color: #fff; 
-	}
-	button#up, button#down, button#stop {
-		font-size: 1.5rem;
 	}
 	button:hover {
 		background-color: var(--background-color); 
@@ -197,24 +166,27 @@ button:disabled {
 	output h1 {
 		background-color: var(--main-ui-btn-color);
 		color: var(--background-color);
-		font-size: var(--h1-web-font-size);
+		font-size: 1.3rem;
 	}
+}
+
+@media screen and (max-width: 715px) {
 	
+	button {
+		font-size: 1rem;
+		background-color: var(--main-ui-btn-color);
+		color: #fff; 
+	}
 }
 
 @media screen and (max-width: 676px) {
 	output h1 {
 		background-color: var(--main-ui-btn-color);
 		color: var(--background-color);
-		font-size: var(--h1-mobile-font-size);
 	}
 }
 
 @media screen and (max-width: 676px) {
-	
-	button#up, button#down, button#stop {
-		font-size: 1.8rem;
-	}
 	
 	output h1 {
 		background-color: white;
@@ -222,10 +194,7 @@ button:disabled {
 		color: darkslategrey;
 		text-shadow: grey 0px 0px 2px;
 		text-emphasis-color: orangered;
-		text-indent: 35px;
-		font-size: var(--h1-mobile-font-size);
-    font-size: 1.125rem;
-		
+		text-indent: 35px;		
 	}
 }
 
@@ -238,21 +207,4 @@ button:disabled {
 	.link {
 		padding: 5%;
 	}
-	
 }
-
-@media screen and (orientation: portrait) and (max-width: 400px) {
-
-  button {
-		padding: 0px;
-		font-size: 0.8rem;
-		height: 2.6rem;
-		touch-action: manipulation;
-  	line-height: 2.4rem;
-  }
-	.button-container-1 {
-		visibility: visible;
-		column-gap: 3px;	
-		margin-top: 100%;
-	}
-} 

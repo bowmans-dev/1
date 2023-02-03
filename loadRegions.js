@@ -66,6 +66,11 @@ const loadRegion = (key) => {
         let imageURL = document.createElement('img');
         imageURL.setAttribute('src', item.querySelector('enclosure').getAttribute('url'));
         imageURL.classList.add("image");
+
+        // if image is not found, hide it
+        imageURL.onerror = function() {
+          imageURL.style.display = "none";
+        }
         
         // display main paragraph main article
         let p = document.createElement('p');
