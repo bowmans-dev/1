@@ -6,45 +6,74 @@ const urls = {
   "middle-east" : "https://news.un.org/feed/subscribe/en/news/region/middle-east/feed/rss.xml"
 }
 
+const output = document.querySelector('output');
+
+
 document.getElementById("africa").addEventListener("click", function (event) {
-  document.querySelector('output').innerHTML = ""; // Clear output element
+
+  output.innerHTML = ""; // Clear output element
   loadRegion(event.target.id);
 });
 
 document.getElementById("americas").addEventListener("click", function (event) {
-  document.querySelector('output').innerHTML = "";
+  output.innerHTML = "";
   loadRegion(event.target.id);
 });
 
 document.getElementById("asia").addEventListener("click", function (event) {
-  document.querySelector('output').innerHTML = "";
+  output.innerHTML = "";
   loadRegion(event.target.id);
 });
 
 document.getElementById("europe").addEventListener("click", function (event) {
-  document.querySelector('output').innerHTML = "";
+  output.innerHTML = "";
   loadRegion(event.target.id);
 });
 
 document.getElementById("middle-east").addEventListener("click", function (event) {
-  document.querySelector('output').innerHTML = "";
+  output.innerHTML = "";
   loadRegion(event.target.id);
 });
+
 
 const loadRegion = (key) => {
 
   const output = document.querySelector('output');
-
+  
+  let storedData = localStorage.getItem(key);
   let url = urls[key];
+  
+  // Check if the data for the region is stored in local storage
+
+  if (storedData) {
+    // If stored, retrieve the data and display it
+    output.innerHTML = storedData;
+
+    return;
+
+  } else {
+  // If not stored, show a loading spinner and make the fetch call
+  output.innerHTML += "Loading...";
+  }
+
 
   fetch(url).then((res) => {
-    
-    res.text().then((xmlTxt) => {
 
+    res.text().then((xmlTxt) => {
+      
       // Parse XML string into DOM object and loop through each item in the feed
       let doc = new DOMParser().parseFromString(xmlTxt, 'text/xml');
+      
+      // get the imageURL from the localStorage url and display it in the output.innerHTML
+      let storedImage = localStorage.getItem(key);
+      output.innerHTML = storedImage;
+
       doc.querySelectorAll('item').forEach((item) => {
-        
+      // if storedData is found, display it and return it to the user without making a fetch call
+        if (storedData) {
+          output.innerHTML = storedData;
+          return;
+        }
         // display date of article
         let date = document.createElement('p');
         date.textContent = item.querySelector('pubDate').textContent;
@@ -65,7 +94,9 @@ const loadRegion = (key) => {
         // get image from article
         let imageURL = document.createElement('img');
         imageURL.setAttribute('src', item.querySelector('enclosure').getAttribute('url'));
-
+        imageURL.classList.add("image");
+        imageURL.classList.add("fade-in-on-load");
+        
         // if image is not found, hide it
         imageURL.onerror = function() {
           imageURL.style.display = "none";
@@ -86,9 +117,12 @@ const loadRegion = (key) => {
         
         // create a line break separating each article
         let hr = document.createElement('hr');
-        output.appendChild(hr);
-
+        output.appendChild(hr);     
+    
       });
+
+      // Store the data in local storage
+      localStorage.setItem(key, output.innerHTML);
     });
   });
-}
+};

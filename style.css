@@ -51,8 +51,8 @@ output h1 {
 
 img {
 	display: block;
-	margin-left: auto;
-	margin-right: auto;
+	/* margin-left: auto;
+	margin-right: auto; */
 	width: 100%;
 	position: relative;
 	align-self: center;
@@ -85,12 +85,12 @@ p {
   color: green;
 	border-style: dashed;
 	border-color: var(--main-ui-btn-color);
-	border-width: 4px;
+	border-width: 2px;
 	border-radius: 25px;
 	height: 420px;
 	padding-bottom: 40px;
 	margin-bottom: 50px;
-	padding: 5%;
+	padding: 1%;
 }
 
 .button-container {
@@ -207,4 +207,10 @@ button:disabled {
 	.link {
 		padding: 5%;
 	}
+}
+
+.image {animation-duration: 1.8s; animation-name: fadeInOnLoad;}
+@keyframes fadeInOnLoad {
+0%,40% {opacity: 0;}
+100% {opacity: 1;}
 }
