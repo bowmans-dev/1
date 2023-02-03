@@ -4,19 +4,30 @@
   <meta charset="UTF-8">
   <title>RSS Feed</title>	
   <script src='./load.js' defer></script>
+  <script src='./scroll.js' defer></script>
   <link rel='stylesheet' href='./style.css'>
 </head>
 <body>
-  <section>   
+  <div class="button-container-1"> 
+    <button id="africa">Africa</button>
+    <button id="americas">Americas</button>
+    <button id="asia">Asia Pacific</button>
+    <button id="europe">Europe</button>
+    <button id="middle-east">Middle East</button>
+  </div><hr> 
+  <section>
+
     <h1 style="font-size: 38px;">United Nations Regional News Reader</h1><hr>
-    <output></output> 
+    
+    <output></output>
+    
     <div class="button-container">
-      <button id="africa">Africa</button>
-      <button id="americas">Americas</button>
-      <button id="asia">Asia Pacific</button>
-      <button id="europe">Europe</button>
-      <button id="middle-east">Middle East</button>
+      <button id="up" onclick="topFunction()" title="Go to top">▲</button>
+      <button id="down" onclick="pageScroll()" title="Continue Scrolling">▼</button>
+      <button id="stop" onclick="stopScroll()" title="Stop Scrolling">▣</button>
     </div> 
-  </section>     
+
+  </section>    
+     
 </body>
 </html>
