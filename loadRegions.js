@@ -119,9 +119,6 @@ const loadRegion = (key) => {
         output.appendChild(hr);     
     
       });
-
-      // Store the data in local storage
-      localStorage.setItem(key, output.innerHTML);
     });
   });
 };
