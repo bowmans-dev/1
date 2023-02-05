@@ -1,6 +1,6 @@
 :root {
 	--background-color: rgba(255, 255, 255, 0.887); /* Default Color for the Page Background */
-	--content-text-color: #000; /* Default Color for the Main Paragraph Text in Each Article */
+	--content-text-color: #b39166; /* Default Color for the Main Paragraph Text in Each Article */
   --main-ui-btn-color: #186ddcec; /* (Buttons & Headlines) Main Background Color for the Buttons & Headlines */
   --ui-text-color: #fff; /* (Buttons & Headlines) Text Color for the Buttons & Headline Sections */
   --hover-color: #0059b3; /* Hover Color for the Buttons */
@@ -10,6 +10,18 @@
 	--bs-body-font-size: 1rem;
 	--h1-web-font-size: calc(1.325rem + 0.9vw);
 	--h1-mobile-font-size: 1.125rem;
+}
+:root {
+  color-scheme: dark light;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+		--content-text-color: #000000;
+  }
+	P {
+		text-shadow: rgb(0, 0, 0) 0px 0px 0px;
+	}
 }
 
 html {
@@ -51,8 +63,6 @@ output h1 {
 
 img {
 	display: block;
-	/* margin-left: auto;
-	margin-right: auto; */
 	width: 100%;
 	position: relative;
 	align-self: center;
@@ -71,7 +81,7 @@ p {
 	font-size: 1.5rem;
 	border-radius: 250px;
 	color: var(--content-text-color);
-	text-shadow: rgb(255, 255, 255) 3px 3px 7px;
+	text-shadow: rgb(0, 0, 0) 0px 0px 0px;
 	text-emphasis-color: orangered;
 	margin-bottom: 60px;
 	padding-bottom: 40px;
@@ -109,6 +119,7 @@ p {
 
 button {
 	font-size: 2.5rem;
+	color: #b4b0b0;
 	text-shadow: grey 0px 0px 2px;
 	height: 4rem;
 	touch-action: manipulation;
@@ -123,19 +134,20 @@ button {
 	column-gap: 30px;
 	border-radius: 4px;
 	transition: background-color 0.3s ease; /* Transition for the Hover Effect */
+	background-color: var(--hover-color);
 }
 
 button:hover {
-	/* font-size: 1.4rem; */
-	/* background-color: #104994ec; */
+
 	background-color: var(--hover-color); 
-	color: var(--background-color);
+	text-shadow: rgb(220, 165, 89) 0px 0px 3px;
+	color: #111111;
 	cursor: pointer;
 }
 
 button:focus {
-	background-color: var(--background-color);
-	color: var(--main-ui-btn-color);
+	background-color: var(--hover-color);
+	color: var(--background-color);
 }
 
 button:disabled {
@@ -214,7 +226,7 @@ button:disabled {
 }
 
 .image {animation-duration: 1.8s; animation-name: fadeInOnLoad;}
-@keyframes fadeInOnLoad {
-0%,40% {opacity: 0;}
-100% {opacity: 1;}
+	@keyframes fadeInOnLoad {
+		0%,40% {opacity: 0;}
+		100% {opacity: 1;}
 }
