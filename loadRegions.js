@@ -39,22 +39,7 @@ const loadRegion = (key) => {
 
   const output = document.querySelector('output');
   
-  let storedData = localStorage.getItem(key);
   let url = urls[key];
-  
-  // Check if the data for the region is stored in local storage
-
-  if (storedData) {
-    // If stored, retrieve the data and display it
-    output.innerHTML = storedData;
-
-    return;
-
-  } else {
-  // If not stored, show a loading spinner and make the fetch call
-  output.innerHTML += "Loading...";
-  }
-
 
   fetch(url).then((res) => {
 
@@ -62,17 +47,9 @@ const loadRegion = (key) => {
       
       // Parse XML string into DOM object and loop through each item in the feed
       let doc = new DOMParser().parseFromString(xmlTxt, 'text/xml');
-      
-      // get the imageURL from the localStorage url and display it in the output.innerHTML
-      let storedImage = localStorage.getItem(key);
-      output.innerHTML = storedImage;
 
       doc.querySelectorAll('item').forEach((item) => {
-      // if storedData is found, display it and return it to the user without making a fetch call
-        if (storedData) {
-          output.innerHTML = storedData;
-          return;
-        }
+       
         // display date of article
         let date = document.createElement('p');
         date.textContent = item.querySelector('pubDate').textContent;
