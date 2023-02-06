@@ -1,13 +1,12 @@
 :root {
-	--background-color: rgba(255, 255, 255, 0.656); /* Default Color for the Page Background */
-	--content-text-color: #b39166; /* [DarkMode] Default Color for the Main Paragraph Text in Each Article */
+	--background-color: rgba(255, 255, 255, 0.887); /* Default Color for the Page Background */
+	--content-text-color: #b39166; /* Default Color for the Main Paragraph Text in Each Article */
   --main-ui-btn-color: #186ddcec; /* (Buttons & Headlines) Main Background Color for the Buttons & Headlines */
   --ui-text-color: #fff; /* (Buttons & Headlines) Text Color for the Buttons & Headline Sections */
   --hover-color: #0059b3; /* Hover Color for the Buttons */
   --disabled-color: #ccc; /* Disabled Color for if Any of the Buttons Are Set to Disabled State */
 	--output-font-size: 1.8rem;
 	--p-font-size: 1rem;
-	--p-text-color: #b39166;
 	--bs-body-font-size: 1rem;
 	--h1-web-font-size: calc(1.325rem + 0.9vw);
 	--h1-mobile-font-size: 1.125rem;
@@ -16,29 +15,10 @@
   color-scheme: dark light;
 }
 
-@media (prefers-color-scheme: dark) {
-	button#up, button#down, button#stop {
-		color: black;
-	}
-}
-
 @media (prefers-color-scheme: light) {
-	:root {
-		--content-text-color: white;
-		--p-text-color: black;
-		--p-text-color: black;
+  :root {
+		--content-text-color: #000000;
   }
-	button {
-		color: white;
-	}
-	P {
-		text-shadow: rgb(0, 0, 0) 0px 0px 0px;
-		color: black;
-	}
-	button#up:hover, button#down:hover, button#stop:hover {
-		background-color: var(--main-ui-btn-color);
-		text-shadow: rgb(0, 0, 0) 0px 0px 3px;
-	}
 }
 
 html {
@@ -60,6 +40,7 @@ section {
 output h1 {
 	text-align: center;
 	border-radius: 250px;
+	text-emphasis-color: orangered;
 	margin-top: 16px;
 	text-indent: 35px;
 	font-size: var(--h1-web-font-size);
@@ -96,11 +77,12 @@ p {
 	text-indent: 35px;
 	font-size: 1.5rem;
 	border-radius: 250px;
+	color: var(--content-text-color);
 	text-shadow: rgb(0, 0, 0) 0px 0px 0px;
+	text-emphasis-color: orangered;
 	margin-bottom: 60px;
 	padding-bottom: 40px;
 }
-
 
 .link {
 	font-size: 0.7rem;
@@ -108,7 +90,7 @@ p {
   text-align: center;
   color: green;
 	border-style: dashed;
-	border-color: rgb(65, 55, 128);
+	border-color: var(--main-ui-btn-color);
 	border-width: 2px;
 	border-radius: 25px;
 	height: 420px;
@@ -126,30 +108,18 @@ p {
 	bottom: 0; 
 	position: fixed; 
 }
+
 .button-container-1 {
 	visibility: visible;
 	column-gap: 3px;	
 }
 
-/* Mobile */
-@media screen and (min-height: 1400px) {
-	button {
-		font-size: 3rem;
-		height: 7rem;
-	}
-	button#stop {
-		font-size: 3.3rem;
-		padding-bottom: 1.5%;
-	}
-}
-
 button {
-	cursor: pointer;
-	border: solid black 2px;
-	font-size: 1.7rem;
-	color: var(--background-color);
-	text-shadow: rgb(156, 118, 118) 0px 0px 2px;
-	height: 2.7rem;
+	font-size: 2.5rem;
+	color: #b4b0b0;
+	text-shadow: grey 0px 0px 2px;
+	height: 4rem;
+	touch-action: manipulation;
 	line-height: 1.2rem; 
 	position: relative;
 	text-align: center;
@@ -164,15 +134,11 @@ button {
 	background-color: var(--hover-color);
 }
 
-button#up:hover, button#down:hover, button#stop:hover {
-	background-color: var(--main-ui-btn-color);
-	color: rgba(82, 68, 37, 0.669);
-}
-
-
 button:hover {
 	background-color: var(--hover-color); 
-	text-shadow: rgb(0, 0, 0) 0px 0px 0px;
+	text-shadow: rgb(220, 165, 89) 0px 0px 3px;
+	color: var(--background-color);
+	cursor: pointer;
 }
 
 button:focus {
@@ -198,7 +164,7 @@ button:disabled {
 }
 
 @media screen and (max-width: 800px) {
-	
+
 	button {
 		font-size: 1.4rem;
 		background-color: var(--main-ui-btn-color);
@@ -232,9 +198,10 @@ button:disabled {
 
 @media screen and (max-width: 676px) {
 	output h1 {
-		background-color: #186ddc;
+		background-color: white;
 		border-radius: 250px;
-		text-shadow: grey 0px 0px 2px; 
+		color: darkslategrey;
+		text-shadow: grey 0px 0px 2px;
 		text-emphasis-color: orangered;
 		text-indent: 35px;		
 	}

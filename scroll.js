@@ -1,5 +1,3 @@
-let scrolldelay;
-
 function pageScroll() {
   window.scrollBy(0, 2); // x and y scroll values
   scrolldelay = setTimeout('pageScroll()', 65); // scrolls every 65 milliseconds

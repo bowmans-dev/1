@@ -39,7 +39,7 @@ const loadRegion = (key) => {
 
   const output = document.querySelector('output');
   
-  let url = urls[key];
+  const url = urls[key];
 
   fetch(url).then((res) => {
 
@@ -49,7 +49,7 @@ const loadRegion = (key) => {
       let doc = new DOMParser().parseFromString(xmlTxt, 'text/xml');
 
       doc.querySelectorAll('item').forEach((item) => {
-       
+     
         // display date of article
         let date = document.createElement('p');
         date.textContent = item.querySelector('pubDate').textContent;
