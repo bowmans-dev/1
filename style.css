@@ -19,6 +19,23 @@
   :root {
 		--content-text-color: #000000;
   }
+	button {
+		background-color: var(--hover-color);
+	}	
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--main-ui-btn-color: #1c1c1c;
+	}
+	button {
+		background-color: var(--main-ui-btn-color);
+	}
+	a:link {
+		text-decoration: none;
+		color: white;
+		height: fit-content;
+	}
 }
 
 html {
@@ -68,7 +85,6 @@ img {
 
 a:link {
 	text-decoration: none;
-	color: var(--main-ui-btn-color);
 	height: fit-content;
 }
 
@@ -88,7 +104,7 @@ p {
 	font-size: 0.7rem;
   display: block;
   text-align: center;
-  color: green;
+  color: #186ddcec; /* (Buttons & Headlines) Main Background Color for the Buttons & Headlines */
 	border-style: dashed;
 	border-color: var(--main-ui-btn-color);
 	border-width: 2px;
@@ -118,7 +134,7 @@ button {
 	font-size: 2.5rem;
 	color: #b4b0b0;
 	text-shadow: grey 0px 0px 2px;
-	height: 4rem;
+	height: 3rem;
 	touch-action: manipulation;
 	line-height: 1.2rem; 
 	position: relative;
@@ -131,7 +147,6 @@ button {
 	column-gap: 30px;
 	border-radius: 4px;
 	transition: background-color 0.3s ease; /* Transition for the Hover Effect */
-	background-color: var(--hover-color);
 }
 
 button:hover {
@@ -151,22 +166,30 @@ button:disabled {
 	cursor: not-allowed; /* Change Cursor to Not-Allowed When Button Is Disabled */
 }
 
-@media screen and (min-width: 950px) {
+@media screen and (min-width: 787px) {
+	.button-container-1 {
+		display: flex;
+		flex-direction: row;
+	}
 	.button-container {
 		display: flex;
 		flex-direction: row;
 		visibility: visible;
 	}
+	button {
+		font-size: 1.5rem;
+	}
 	h1 {
-		font-size: var(--h1-mobile-font-size);
 		font-size: 1.5rem;
 	}
 }
 
+
+
 @media screen and (max-width: 800px) {
 
 	button {
-		font-size: 1.4rem;
+		font-size: 1.5rem;
 		background-color: var(--main-ui-btn-color);
 		color: #fff; 
 	}
@@ -178,7 +201,7 @@ button:disabled {
 	output h1 {
 		background-color: var(--main-ui-btn-color);
 		color: var(--background-color);
-		font-size: 1.3rem;
+		font-size: 1.5rem;
 	}
 }
 
@@ -198,9 +221,8 @@ button:disabled {
 
 @media screen and (max-width: 676px) {
 	output h1 {
-		background-color: white;
+		background-color: 22272e;
 		border-radius: 250px;
-		color: darkslategrey;
 		text-shadow: grey 0px 0px 2px;
 		text-emphasis-color: orangered;
 		text-indent: 35px;		
@@ -221,4 +243,8 @@ button:disabled {
 	@keyframes fadeInOnLoad {
 		0%,40% {opacity: 0;}
 		100% {opacity: 1;}
+}
+
+output {
+	margin: 200px;
 }
