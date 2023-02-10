@@ -1,0 +1,4 @@
+### This code defines an HTML file that displays news articles from the United Nations (UN) website, filtered by region. The regions are: Africa, Americas, Asia Pacific, Europe, and Middle East.
+#### The JavaScript code attaches event listeners to each button, which trigger a loadRegion function when clicked. The loadRegion function uses the fetch API to retrieve an XML file from the UN's website, corresponding to the selected region. The XML file is then parsed into a DOM object and processed to extract the information needed to display the articles, such as the article's title, date, and a link to the article. The extracted information is then used to create HTML elements and added to the output section.
+
+#### The code also includes logic for handling error scenarios, such as if an image is not found in an article. In such cases, the code hides the image.
