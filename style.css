@@ -1,7 +1,7 @@
 :root {
 	--background-color: rgba(255, 255, 255, 0.887); /* Default Color for the Page Background */
 	--content-text-color: #b39166; /* Default Color for the Main Paragraph Text in Each Article */
-  --main-ui-btn-color: #186ddcec; /* (Buttons & Headlines) Main Background Color for the Buttons & Headlines */
+  --main-ui-btn-color: #b39166; /* (Buttons & Headlines) Main Background Color for the Buttons & Headlines */
   --ui-text-color: #fff; /* (Buttons & Headlines) Text Color for the Buttons & Headline Sections */
   --hover-color: #0059b3; /* Hover Color for the Buttons */
   --disabled-color: #ccc; /* Disabled Color for if Any of the Buttons Are Set to Disabled State */
@@ -18,24 +18,42 @@
 @media (prefers-color-scheme: light) {
   :root {
 		--content-text-color: #000000;
+		--hover-color: #0059b3;
+		--main-ui-btn-color: #186ddcec;
   }
 	button {
 		background-color: var(--hover-color);
-	}	
+	}		
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
 		--main-ui-btn-color: #1c1c1c;
+		--hover-color: #0059b3;
 	}
 	button {
-		background-color: var(--main-ui-btn-color);
+		background-color: var(--content-text-color);
+	}
+
+	button:focus {
+		background-color: var(--content-text-color);
+		color: var(--background-color);
 	}
 	a:link {
 		text-decoration: none;
 		color: white;
 		height: fit-content;
 	}
+
+	@media screen and (max-width: 800px) {
+
+		button:hover {
+			background-color: var(--content-text-color);
+			color: white;
+			cursor: pointer;
+		}
+	}
+
 }
 
 html {
@@ -133,9 +151,8 @@ p {
 button {
 	font-size: 2.5rem;
 	color: #b4b0b0;
-	text-shadow: grey 0px 0px 2px;
-	height: 3rem;
-	touch-action: manipulation;
+	text-shadow: grey 0px 0px 0px;
+	height: 2.8rem;
 	line-height: 1.2rem; 
 	position: relative;
 	text-align: center;
@@ -150,11 +167,12 @@ button {
 }
 
 button:hover {
-	background-color: var(--hover-color); 
-	text-shadow: rgb(220, 165, 89) 0px 0px 3px;
+	background-color: var(--main-ui-btn-color); 
 	color: var(--background-color);
 	cursor: pointer;
 }
+
+
 
 button:focus {
 	background-color: var(--hover-color);
@@ -188,20 +206,15 @@ button:disabled {
 
 @media screen and (max-width: 800px) {
 
+	button:hover {
+		background-color: var(--background-color); 
+		color: var(--content-text-color);
+		cursor: pointer;
+	}
 	button {
 		font-size: 1.5rem;
 		background-color: var(--main-ui-btn-color);
 		color: #fff; 
-	}
-	button:hover {
-		background-color: var(--background-color); 
-		color: var(--hover-color);
-		cursor: pointer;
-	}
-	output h1 {
-		background-color: var(--main-ui-btn-color);
-		color: var(--background-color);
-		font-size: 1.5rem;
 	}
 }
 
@@ -209,13 +222,6 @@ button:disabled {
 	button {
 		background-color: var(--main-ui-btn-color);
 		color: #fff; 
-	}
-}
-
-@media screen and (max-width: 676px) {
-	output h1 {
-		background-color: var(--main-ui-btn-color);
-		color: var(--background-color);
 	}
 }
 
@@ -247,4 +253,8 @@ button:disabled {
 
 output {
 	margin: 200px;
+}
+
+hr {
+	margin-bottom: 40px;
 }
