@@ -1,7 +1,7 @@
 :root {
 	--background-color: rgba(255, 255, 255, 0.887); /* Default Color for the Page Background */
 	--content-text-color: #b39166; /* Default Color for the Main Paragraph Text in Each Article */
-  --main-ui-btn-color: #b39166; /* (Buttons & Headlines) Main Background Color for the Buttons & Headlines */
+  /* --main-ui-btn-color: #b39166; (Buttons & Headlines) Main Background Color for the Buttons & Headlines */
   --ui-text-color: #fff; /* (Buttons & Headlines) Text Color for the Buttons & Headline Sections */
   --hover-color: #0059b3; /* Hover Color for the Buttons */
   --disabled-color: #ccc; /* Disabled Color for if Any of the Buttons Are Set to Disabled State */
