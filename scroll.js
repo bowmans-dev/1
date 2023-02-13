@@ -22,7 +22,9 @@ function startScroll() {
 }
 
 function keyboardStopPageScroll() {
+  scrolling = false;
   clearTimeout(scrolldelay);
+  window.scrollBy(0, 0);
 }
 
 function topFunction() {
