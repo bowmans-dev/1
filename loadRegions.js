@@ -73,10 +73,6 @@ const loadRegion = (key) => {
         imageURL.classList.add("image");
         imageURL.classList.add("fade-in-on-load");
         
-        // if image is not found, hide it
-        imageURL.onerror = function() {
-          imageURL.style.display = "none";
-        }
         
         // display main paragraph main article
         let p = document.createElement('p');
@@ -94,7 +90,7 @@ const loadRegion = (key) => {
         // create a line break separating each article
         let hr = document.createElement('hr');
         output.appendChild(hr);     
-    
+        
       });
     });
   });
