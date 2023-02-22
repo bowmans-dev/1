@@ -70,6 +70,11 @@ const loadRegion = (key) => {
         // get image from article
         let imageURL = document.createElement('img');
         imageURL.setAttribute('src', item.querySelector('enclosure').getAttribute('url'));
+
+        // if image is not found, hide it
+        imageURL.onerror = function() {
+          imageURL.style.display = "none";
+        }
         imageURL.classList.add("image");
         imageURL.classList.add("fade-in-on-load");
         

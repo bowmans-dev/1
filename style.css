@@ -174,7 +174,17 @@ button:disabled {
 	cursor: not-allowed; /* Change Cursor to Not-Allowed When Button Is Disabled */
 }
 
+@media screen and (min-width: 1900px) {
+	
+	* {
+		max-width: 1600px;
+		align-self: center;
+		align-content: center;
+	}
+}
+
 @media screen and (min-width: 787px) {
+
 	.button-container-1 {
 		display: flex;
 		flex-direction: row;
@@ -217,7 +227,6 @@ button:disabled {
 	output h1 {
 		background-color: 22272e;
 		border-radius: 250px;
-		text-shadow: grey 0px 0px 2px;
 		text-emphasis-color: orangered;
 		text-indent: 35px;		
 	}
