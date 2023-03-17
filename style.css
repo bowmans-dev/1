@@ -1,10 +1,10 @@
 :root {
-	--background-color: rgba(255, 255, 255, 0.887); /* Default Color for the Page Background */
-	--content-text-color: #b39166; /* Default Color for the Main Paragraph Text in Each Article */
-  --main-ui-btn-color: #b39166;  /*(Buttons & Headlines) Main Background Color for the Buttons & Headlines */
-  --ui-text-color: #fff; /* (Buttons & Headlines) Text Color for the Buttons & Headline Sections */
-  --hover-color: #0059b3; /* Hover Color for the Buttons */
-  --disabled-color: #ccc; /* Disabled Color for if Any of the Buttons Are Set to Disabled State */
+	--background-color: rgba(255, 255, 255, 0.887);
+	--content-text-color: #b39166;
+  --main-ui-btn-color: #b39166;
+  --ui-text-color: #fff;
+  --hover-color: #0059b3;
+  --disabled-color: #ccc;
 	--output-font-size: 1.8rem;
 	--p-font-size: 1rem;
 	--bs-body-font-size: 1rem;
@@ -19,6 +19,7 @@
 	:root {
 		--main-ui-btn-color: #1c1c1c;
 		--hover-color: #0059b3;
+		--content-text-color: #fff;
 	}
 	button {
 		background-color: var(--content-text-color);
@@ -109,7 +110,7 @@ p {
 	font-size: 0.7rem;
   display: block;
   text-align: center;
-  color: #186ddcec; /* (Buttons & Headlines) Main Background Color for the Buttons & Headlines */
+  color: #186ddcec;
 	border-style: dashed;
 	border-color: var(--main-ui-btn-color);
 	border-width: 2px;
@@ -154,6 +155,7 @@ button {
 	border-radius: 4px;
 	transition: background-color 0.3s ease; /* Transition for the Hover Effect */
 	touch-action: manipulation;
+	-webkit-tap-highlight-color: transparent;
 }
 
 button:hover {
@@ -170,8 +172,8 @@ button:focus {
 }
 
 button:disabled {
-	background-color: var(--disabled-color); /* Disabled color for the Buttons */
-	cursor: not-allowed; /* Change Cursor to Not-Allowed When Button Is Disabled */
+	background-color: var(--disabled-color);
+	cursor: not-allowed;
 }
 
 @media screen and (min-width: 1900px) {
@@ -205,7 +207,6 @@ button:disabled {
 @media screen and (max-width: 800px) {
 
 	button:hover {
-		background-color: var(--background-color); 
 		color: var(--content-text-color);
 		cursor: pointer;
 	}
