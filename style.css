@@ -207,7 +207,7 @@ button:disabled {
 @media screen and (max-width: 800px) {
 
 	button:hover {
-		color: var(--content-text-color);
+		color: #fff;
 		cursor: pointer;
 	}
 	button {
