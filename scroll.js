@@ -6,8 +6,8 @@ function pageScroll() {
     return;
   }
 
-  window.scrollBy(0, 2);
-  scrolldelay = setTimeout(pageScroll, 65);
+  window.scrollBy(0, 1);
+  scrolldelay = setTimeout(pageScroll, 20);
 }
 
 function stopScroll() {
