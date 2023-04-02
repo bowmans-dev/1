@@ -7,8 +7,12 @@
   <script src='./loadRegions.js' defer></script>
   <script src='./scroll.js' defer></script>
   <link rel='stylesheet' href='./style.css'>
+  <link rel="icon" type="image/x-icon" href="fav.ico">
 </head>
 <body>
+
+  <h1 id="select-prompt" style="display: block;">Select a Region: </h1>
+
   <div class="button-container-1"> 
     <button id="africa">Africa</button>
     <button id="americas">Americas</button>
@@ -16,7 +20,9 @@
     <button id="europe">Europe</button>
     <button id="middle-east">Middle East</button>
   </div>
+
   <hr> 
+
   <section>
     <hr>
     <output></output>
@@ -25,6 +31,7 @@
       <button id="down" onclick="startScroll()" title="Continue Scrolling">▼</button>
       <button id="stop" onclick="stopScroll()" title="Stop Scrolling">▣</button>
     </div> 
-  </section>      
+  </section>   
+
 </body>
 </html>

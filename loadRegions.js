@@ -10,27 +10,27 @@ const output = document.querySelector('output');
 
 document.getElementById("africa").addEventListener("click", function (event) {
 
-  output.innerHTML = ""; // Clear output element
+  output.innerHTML = `<h3 class="selected">Region: Africa</h3>`;
   loadRegion(event.target.id);
 });
 
 document.getElementById("americas").addEventListener("click", function (event) {
-  output.innerHTML = "";
+  output.innerHTML = `<h3 class="selected">Region: Americas</h3>`;
   loadRegion(event.target.id);
 });
 
 document.getElementById("asia").addEventListener("click", function (event) {
-  output.innerHTML = "";
+  output.innerHTML = `<h3 class="selected">Region: Asia Pacific</h3>`;
   loadRegion(event.target.id);
 });
 
 document.getElementById("europe").addEventListener("click", function (event) {
-  output.innerHTML = "";
+  output.innerHTML = `<h3 class="selected">Region: Europe</h3>`;
   loadRegion(event.target.id);
 });
 
 document.getElementById("middle-east").addEventListener("click", function (event) {
-  output.innerHTML = "";
+  output.innerHTML = `<h3 class="selected">Region: Middle East</h3>`;
   loadRegion(event.target.id);
 });
 
@@ -63,6 +63,7 @@ const loadRegion = (key) => {
         // create a link to the article
         let link = document.createElement('a');
         link.setAttribute('href', item.querySelector('link').textContent);
+        link.setAttribute('target', '_blank');
         link.textContent = "";
         link.classList.add("link");
         output.appendChild(link);
@@ -96,6 +97,8 @@ const loadRegion = (key) => {
         let hr = document.createElement('hr');
         output.appendChild(hr);     
         
+        document.getElementById("select-prompt").style.display = "none"
+
       });
     });
   });
