@@ -332,5 +332,11 @@ output {
 }
 
 a {
-	max-width: 400px;
+	max-width: 500px;
+	user-select: none;
+	-webkit-tap-highlight-color: none;
+}
+
+hr {
+	width: 100%;
 }
