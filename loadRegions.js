@@ -41,9 +41,11 @@ const loadRegion = (key) => {
   
   const url = urls[key];
 
-  fetch(url).then((res) => {
+  const proxyUrl = "https://api.allorigins.win/raw?url=";
 
-    res.text().then((xmlTxt) => {
+  fetch(proxyUrl + encodeURIComponent(url)) 
+    .then(res => res.text())
+    .then((xmlTxt) => {
       
       // Parse XML string into DOM object and loop through each item in the feed
       let doc = new DOMParser().parseFromString(xmlTxt, 'text/xml');
@@ -81,16 +83,19 @@ const loadRegion = (key) => {
         
         
         // display main paragraph main article
+        let rawHTML = item.querySelector('description').textContent;
+        let tempDiv = document.createElement('div');
+        tempDiv.innerHTML = rawHTML;
+        let decodedText = tempDiv.textContent || tempDiv.innerText || "";
+
+        decodedText = decodedText.replace(/\u00a0/g, ' ').trim(); // Replace non-breaking space with regular space
+
         let p = document.createElement('p');
-        p.textContent = item.querySelector('description').textContent;
+        p.textContent = decodedText;
         
-        // put the h1 inside of the link
         link.appendChild(h1);
-        //put the date inside of the link
         link.appendChild(date);
-        // display the image outside of the link
         link.appendChild(imageURL);
-        //put the paragraph inside of the link
         link.appendChild(p);
         
         // create a line break separating each article
@@ -101,5 +106,4 @@ const loadRegion = (key) => {
 
       });
     });
-  });
 };

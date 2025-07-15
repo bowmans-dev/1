@@ -325,3 +325,12 @@ button:disabled {
 		color: #0059b3;
 	}
 }
+
+output {
+	display: grid;
+	place-items: center;
+}
+
+a {
+	max-width: 400px;
+}
